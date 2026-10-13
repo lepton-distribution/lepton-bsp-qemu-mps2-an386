@@ -1,7 +1,7 @@
 /*
- * Lepton — BSP commun des machines QEMU MPS2 (mps2-an386 Cortex-M4, mps2-an500 Cortex-M7).
- * Licence : voir LICENSE (MPL 1.1). Adresses et interruptions : <machine>/qemu_mps2_machine.h,
- * choisi par le chemin d'inclusion que pose cmake/boards/qemu-mps2-<machine>.cmake.
+ * Lepton — BSP de la machine QEMU mps2-an386 (Cortex-M4), greffon qemu-mps2-an386 (même code que
+ * qemu-mps2-an500). Licence : voir LICENSE (MPL 1.1). Adresses et interruptions :
+ * qemu_mps2_machine.h, à côté de ce fichier.
  * Horloge système (pas de PLL : QEMU), instances UART CMSDK ttys0 (console lsh) et ttys1,
  * Ethernet LAN9118 eth0, routage de leurs interruptions.
  */
@@ -17,9 +17,9 @@
 #include "kernel/fs/vfs/vfsdev.h"
 #include "kernel/fs/vfs/vfstypes.h"
 
-#include "kernel/dev/arch/all/uart/dev_cmsdk_uart/dev_cmsdk_uart_x.h"
-#include "kernel/dev/arch/all/eth/dev_eth_lan9118/dev_eth_lan9118_x.h"
-#include "qemu_mps2_machine.h"   /* en-tête de la machine : bsp/qemu_mps2/<machine>/ */
+#include "kernel/dev/arch/cortexm/qemu-mps2/uart/dev_cmsdk_uart_x.h"
+#include "kernel/dev/arch/cortexm/qemu-mps2/eth/dev_eth_lan9118_x.h"
+#include "qemu_mps2_machine.h"   /* en-tête de la machine, à côté de ce fichier */
 
 /* --- horloge (CMSIS system_ARMCM4.h) ------------------------------------------------------ */
 uint32_t SystemCoreClock = QEMU_MPS2_SYSCLK_HZ;
