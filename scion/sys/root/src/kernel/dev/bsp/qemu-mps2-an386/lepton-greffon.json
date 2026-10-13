@@ -1,0 +1,27 @@
+{
+  "nom": "qemu-mps2-an386",
+  "type": "bsp",
+  "version": "1.0.0",
+  "description": "Machine QEMU mps2-an386 (Cortex-M4F, 25 MHz) : UART CMSDK ttys0 (console) et ttys1, Ethernet LAN9118 eth0.",
+  "destination": "kernel/dev/bsp/qemu-mps2-an386",
+  "bibliotheque": "bsp",
+  "famille": "qemu-mps2",
+  "coeur": "cortex-m4f",
+  "mcu": "ARMCM4",
+  "frequence_cpu": 25000000,
+  "entete_config_noyau": "include/user_kernel_mkconf.h",
+  "script_liens": "ld/mem_qemu-mps2-an386.ld",
+  "demarrage": [
+    "qemu_mps2_board.c"
+  ],
+  "qemu": {
+    "machine": "mps2-an386"
+  },
+  "compilation": {
+    "publique": {
+      "definitions": [
+        "__tauon_cpu_device__=__tauon_cpu_device_cortexM4_qemu_mps2_an386__"
+      ]
+    }
+  }
+}
