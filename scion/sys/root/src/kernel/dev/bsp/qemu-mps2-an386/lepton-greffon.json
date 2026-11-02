@@ -17,6 +17,7 @@
   "qemu": {
     "machine": "mps2-an386"
   },
+  "tests": "tests",
   "compilation": {
     "publique": {
       "definitions": [
