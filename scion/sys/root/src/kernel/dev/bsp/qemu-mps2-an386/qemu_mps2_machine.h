@@ -6,7 +6,7 @@
 #ifndef _QEMU_MPS2_MACHINE_H_
 #define _QEMU_MPS2_MACHINE_H_
 
-/* périphériques du cœur (CMSIS-Core V3.30 de l'arbre, modèle ARMCM4) */
+/* périphériques du cœur (modèle ARMCM4 de l'arbre ; CMSIS-Core 5 de cmake/cpu/cortex-m4f.cmake) */
 #include "kernel/core/ucore/cmsis/Device/ARM/ARMCM4/Include/ARMCM4.h"
 
 #define QEMU_MPS2_SYSCLK_HZ     25000000u
